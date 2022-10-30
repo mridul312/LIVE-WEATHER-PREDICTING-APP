@@ -19,10 +19,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   void getLocationData() async {
     var weatherData = await WeatherModel().getLocationWeather();
+    //weather data wwil contain latitude and longitude
 
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return LocationScreen(
-        locationWeather: weatherData,
+        locationWeather: weatherData,  //return the weather when lat&on are passed
       );
     }));
   }
